@@ -1,5 +1,4 @@
 package stepDefinishions;
-
 import helpers.Calculator;
 import helpers.DifferenceCalculatorHelper;
 import helpers.SumCalculatorHelper;
@@ -8,7 +7,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runners.Parameterized;
 
 public class CalculationOfNumbersSteps {
     Calculator calculator;
@@ -27,59 +25,35 @@ public class CalculationOfNumbersSteps {
         return null;
     }
 
-    @Given("there is a {calculation} calculator")
-    public void there_is_a_calculator(Calculator calculation) {
-        calculator = calculation;
-    }
-
-    @Given("calculate sum/difference of int numbers {int} and {int}")
-    public void calculateSumOfIntNumbers(int a, int b) {
+    @Given("calculate sum/difference of int numbers {int} and {int} with {calculation} calculator")
+    public void calculateSumOfIntNumbersAndWithSumCalculator(int a, int b, Calculator calculator) {
         calculationInts = calculator.calculate(a, b);
     }
 
-    @When("expected sum/difference input result is {int}")
-    public void expectedSumInputResultIs(int resultInts) {
-        expectedCalculationInts = resultInts;
+    @Given("calculate sum/difference of decimal numbers {double} and {double} with {calculation} calculator")
+    public void calculateSumOfDecimalNumbersAndWithSumCalculator(double a, double b, Calculator calculator) {
+        calculationDoubles = calculator.calculate(a, b);
     }
 
-    @Then("check if the int sum/difference is correct")
+
+    @When("expected int sum/difference result is {int}")
+    public void expectedSumInputResultIs(int result) {
+        expectedCalculationInts = result;
+    }
+
+    @When("expected double sum/difference result is {double}")
+    public void expectedSumInputResultIs(double result) {
+        expectedCalculationDoubles = result;
+    }
+
+    @Then("check int sum/difference is correct")
     public void checkIfTheIntSumIsCorrect() {
         Assertions.assertEquals(expectedCalculationInts, calculationInts,
                 "Expected result didn't match!");
     }
 
-    @Given("calculate sum/difference of decimal numbers {double} and {double}")
-    public void calculateSumOfDecimalNumbersAnd(double a, double b) {
-        calculationDoubles = calculator.calculate(a, b);
+    @Then("check decimal sum/difference is not correct")
+    public void checkDecimalSumIsNotCorrect() {
+        Assertions.assertNotEquals(expectedCalculationDoubles, calculationDoubles);
     }
-
-
-    @When("expected sum/difference input result is {double}")
-    public void expectedSumInputResultIs(double resultDecimals) {
-        expectedCalculationDoubles = resultDecimals;
-    }
-
-
-    @Then("we check if the int sum/difference is correct")
-    public void weCheckIfTheIntSumIsCorrect() {
-        Assertions.assertEquals(this.expectedCalculationDoubles, this.calculationDoubles,
-                "Expected result didn't match!");
-    }
-
-    @Given("calculate difference of decimal numbers {double} and {double}")
-    public void calculateDifferenceOfDecimalNumbersAnd(double a, double b) {
-
-    }
-
-    @When("expected difference decimal input result is {double}")
-    public void expectedDifferenceDecimalInputResultIs() {
-
-    }
-
-    @Then("we check if the decimal difference is correct")
-    public void weCheckIfTheDecimalDifferenceIsCorrect() {
-
-    }
-
-
 }
