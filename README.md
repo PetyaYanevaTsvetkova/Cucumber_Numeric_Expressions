@@ -31,7 +31,6 @@
 
 ## Table of Contents:
 	numericexpresion
-	ShoppingList
 	README.md file
 	.gitignore file
 	
