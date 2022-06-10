@@ -16,6 +16,15 @@
 	(sum or difference).  Using a custom parameter set the appropriate calculator - for sum or difference.
 	There is no need to test all available methods.
 
+	Examples:
+
+      | Input       | Calculator | Result calculated | Set expected output to | Test Status |
+      | 3 and 5     | sum        | 8                 | 8                      | Passed      |
+      | 1.2 and 3.0 | sum        | 4.2               | 5.2                    | Failed      |
+      | 10 and 6    | difference | 4                 | 4                      | Passed      |
+      | 7.5 and 2.5 | difference | 5.0               | 3.8                    | Failed      |
+
+
 	Compare two columns with numbers
 	Description: Implement a Cucumber scenario with a step that accepts a Data table of  two columns with numbers. Using the attached calculator helpers perform the target calculations by column. Using a custom parameter set the appropriate calculator - for sum or difference
 	Example 1: sum all the numbers in the first column and sum all the numbers in the second column. 
