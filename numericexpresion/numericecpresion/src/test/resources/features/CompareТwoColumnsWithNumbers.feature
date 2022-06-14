@@ -1,4 +1,4 @@
-# Created by 5q
+# Created by Petya Yaneva-Tsvetkova
 Feature: Testing Data Table calculation
 
   Rule: Calculations are done by columns and then compared

@@ -1,4 +1,4 @@
-package stepDefinishions;
+package stepDefinitions;
 import helpers.Calculator;
 import helpers.DifferenceCalculatorHelper;
 import helpers.SumCalculatorHelper;

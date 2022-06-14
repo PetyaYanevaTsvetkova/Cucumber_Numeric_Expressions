@@ -1,5 +1,6 @@
-# Created by 5q
-@NumericExpressions
+# Created by Petya Yaneva-Tsvetkova
+
+@CalculationOfNumbers
 Feature: Test Calculator functionality for Sum and Difference
 
   Rule: Sum of the two numbers
